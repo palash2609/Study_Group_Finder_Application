@@ -1,0 +1,315 @@
+/* General styles */
+:root {
+    --primary-color: #507687;
+    --secondary-color: #B8001F;
+    --background-color: #FCFAEE;
+    --text-color: #384B70;
+    --white: #FCFAEE;
+    
+}
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Ensure this font family is applied */
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+.container{
+    max-width: 600px;
+    margin:0 auto;
+    padding:50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.form-group{
+    margin-bottom:30px;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin-right: 10px;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar ul li a:hover, .navbar ul li a:focus {
+    color: var(--secondary-color);
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.nmims-logo {
+    height: 65px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px; 
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* Section with Fixed Background Image */
+.background-section {
+    position: relative; /* Make this section relative for absolute positioning of the overlay */
+    background-image: url('Homepage_1.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background fixed for this section */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FCFAEE; /* Optional: Set text color for readability */
+    padding: 180px 150px; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.background-section::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute; /* Positioning it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensures this is above the background but below the text */
+}
+
+.background-section h1, .background-section p {
+    color: #FFFFFF; /* White text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a dark shadow around the text */
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+/* Styling the main heading */
+h1,h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin: 20px 0;
+    font-size: 3em;
+}
+#a {
+    font-size: 1.5em;
+}
+
+/* New styles for the registration section */
+.registration-section {
+    background-color: var(--primary-color); /* Light background color */
+    padding: 30px; /* Padding around the section */
+    margin: auto; /* Center the section */
+    text-align: center; /* Center align text */
+}
+
+.registration-section p {
+    color: var(--white); /* Use the primary color for the heading */
+    margin-bottom: 15px; /* Margin below the heading */
+    font-size: 1.75em;
+}
+
+/* New styles for the login section */
+.login-section {
+    text-align: center; /* Center align text */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.login-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 15px 30px; /* Padding for the login button */
+    border-radius: 5px;
+    font-size: 20px; /* Font size for login button */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.login-btn a {
+    color: var(--white); /* White text color for the link */
+    text-decoration: none; /* No underline for the link */
+}
+
+.login-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+/* Button styling */
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 50px;
+}
+
+.center-buttons .btn {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 80px 75px; /* Increased padding for better touch targets */
+    margin: 0 40px;
+    border-radius: 5px;
+    font-size: 30px; /* Slightly larger text */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.center-buttons .btn a {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center-buttons .btn img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+}
+
+.center-buttons .btn a span {
+    font-weight: bold; /* Makes the text bold */
+}
+
+.center-buttons .btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .background-section {
+        padding: 100px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .center-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+.enroll-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.enroll-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px); /* Adds a slight lift on hover */
+}
+
+.logout-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 15px 30px; /* Padding for the login button */
+    border-radius: 5px;
+    font-size: 20px; /* Font size for login button */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+    color: var(--white);
+}
+
+.logout-btn:hover {
+    background-color: #dc3545; /* Darker shade on hover */
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+}
+

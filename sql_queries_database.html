@@ -1,0 +1,55 @@
+<!--Given below will be the sql queries needed to form the database study_group_finder-->
+
+<!-- -- Create the database
+CREATE DATABASE study_group_finder;
+
+-- Use the database
+USE study_group_finder;
+
+-- Table for storing student details
+CREATE TABLE student_details (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(100) NOT NULL,
+    contact VARCHAR(15),
+    course VARCHAR(100),
+    subject VARCHAR(100),
+    semester INT,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Table for storing mentor details
+CREATE TABLE mentor_details (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(100) NOT NULL,
+    contact VARCHAR(15),
+    course VARCHAR(100),
+    subject VARCHAR(100),
+    semester INT,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Table for storing course details
+CREATE TABLE courses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    mentor_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    no_of_modules INT,
+    demo_video_link VARCHAR(255),
+    demo_notes_link VARCHAR(255),
+    FOREIGN KEY (mentor_id) REFERENCES mentor_details(id) ON DELETE SET NULL
+);
+
+-- Table for storing enrolled students
+CREATE TABLE enrolled (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    course_id INT,
+    enrolled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES student_details(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
+);
+ -->
